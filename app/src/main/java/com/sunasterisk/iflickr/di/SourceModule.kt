@@ -1,6 +1,9 @@
 package com.sunasterisk.iflickr.di
 
+import com.sunasterisk.iflickr.data.repository.PhotoRepository
 import com.sunasterisk.iflickr.data.repository.UserRepository
+import com.sunasterisk.iflickr.data.source.local.PhotoLocalDataSource
+import com.sunasterisk.iflickr.data.source.local.UserLocalDataSource
 import com.sunasterisk.iflickr.data.source.remote.PhotoRemoteDataSource
 import com.sunasterisk.iflickr.data.source.remote.UserRemoteDataSource
 import org.koin.core.qualifier.named
@@ -16,7 +19,7 @@ val sourceModule = module {
     }
 
     single(named(KoinNames.PHOTO_REPOSITORY)) {
-        UserRepository(
+        PhotoRepository(
             get(named(KoinNames.PHOTO_LOCAL_DATASOURCE)),
             get(named(KoinNames.PHOTO_REMOTE_DATASOURCE))
         )
@@ -27,7 +30,7 @@ val sourceModule = module {
     }
 
     single(named(KoinNames.USER_LOCAL_DATASOURCE)) {
-        // TODO init user local data source
+        UserLocalDataSource()
     }
 
     single(named(KoinNames.PHOTO_REMOTE_DATASOURCE)) {
@@ -35,6 +38,6 @@ val sourceModule = module {
     }
 
     single(named(KoinNames.PHOTO_LOCAL_DATASOURCE)) {
-        // TODO init photo local data source
+        PhotoLocalDataSource()
     }
 }

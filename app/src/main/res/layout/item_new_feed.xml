@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_4"
+    android:layout_marginBottom="@dimen/dp_4"
+    android:padding="@dimen/dp_8"
+    android:background="@drawable/shape_item_new_feed">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageOwnerAvatar"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:src="@drawable/ic_launcher_foreground"
+            app:civ_border_color="@android:color/darker_gray"
+            app:civ_border_width="@dimen/dp_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textOwnerName"
+            style="@style/TextUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/imageOwnerAvatar"
+            app:layout_constraintStart_toEndOf="@id/imageOwnerAvatar"
+            app:layout_constraintTop_toTopOf="@id/imageOwnerAvatar" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerPhotoSet"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_400"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageOwnerAvatar" />
+
+        <ImageView
+            android:id="@+id/imageFavorite"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerPhotoSet" />
+
+        <TextView
+            android:id="@+id/textFavoritePersons"
+            style="@style/TextComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/imageFavorite"
+            app:layout_constraintStart_toEndOf="@id/imageFavorite"
+            app:layout_constraintTop_toTopOf="@id/imageFavorite" />
+
+        <TextView
+            android:id="@+id/textPhotoSetOwner"
+            style="@style/TextUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageFavorite" />
+
+        <TextView
+            android:id="@+id/textPhotoSetTitle"
+            style="@style/TextComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/textPhotoSetOwner"
+            app:layout_constraintStart_toEndOf="@id/textPhotoSetOwner"
+            app:layout_constraintTop_toTopOf="@id/textPhotoSetOwner" />
+
+        <TextView
+            android:id="@+id/textAllComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@android:string/untitled"
+            android:textColor="@color/colorGrayLight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPhotoSetOwner" />
+
+        <TextView
+            android:id="@+id/textCommentName"
+            style="@style/TextUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textAllComments" />
+
+        <TextView
+            android:id="@+id/textCommentContent"
+            style="@style/TextComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/textCommentName"
+            app:layout_constraintStart_toEndOf="@id/textCommentName"
+            app:layout_constraintTop_toTopOf="@id/textCommentName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

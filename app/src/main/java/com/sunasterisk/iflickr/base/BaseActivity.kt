@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.sunasterisk.iflickr.R
 
 abstract class BaseActivity: AppCompatActivity() {
 
@@ -27,9 +28,9 @@ abstract class BaseActivity: AppCompatActivity() {
 
     abstract fun observerData()
 
-    fun setFragment(viewRes: Int, fragment: Fragment) {
+    fun setFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(viewRes, fragment)
+            .replace(R.id.frameContent, fragment)
             .commit()
     }
 }
